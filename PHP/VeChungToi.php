@@ -3,7 +3,7 @@
 <main class="about-page">
     <section class="about-hero">
         <div class="about-hero-content">
-            <h1>Về Tâm Nguyện</h1>
+            <h1>Về Mầm Non Mai Động</h1>
             <p>Hành trình kết nối những nhịp đập yêu thương</p>
         </div>
     </section>

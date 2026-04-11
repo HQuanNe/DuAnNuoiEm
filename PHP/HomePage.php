@@ -27,17 +27,17 @@
                     <a href="index.php?type=QuanAo" class="btn-outline">Xem chi tiết</a>
                 </div>
 
-                <div class="category-card">
+                <!-- <div class="category-card">
                     <div class="category-img">[Ảnh Chăn]</div>
                     <h3>Chăn</h3>
                     <a href="index.php?type=chan" class="btn-outline">Xem chi tiết</a>
-                </div>
+                </div> -->
 
-                <div class="category-card">
+                <!-- <div class="category-card">
                     <div class="category-img">[Ảnh Mũ len]</div>
                     <h3>Mũ len</h3>
                     <a href="index.php?type=mu-len" class="btn-outline">Xem chi tiết</a>
-                </div>
+                </div> -->
 
                 <div class="category-card">
                     <div class="category-img">[Ảnh Váy]</div>
@@ -59,6 +59,5 @@
             </div>
         </section>
     </main>
-    <script src="../JS/scripts.js"></script>
 </body>
 </html>

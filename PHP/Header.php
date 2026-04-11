@@ -9,7 +9,7 @@
     <header>
     <div class="top-bar">
             <div class="logo">
-                <a href="index.php"><h2>Tâm Nguyện</h2></a>
+                <a href="index.php"><h2>Mầm Non Mai Động</h2></a>
             </div>
             
             <div class="search-box">
@@ -21,10 +21,10 @@
 
             <div class="right-actions">
                 <div class="quick-icons">
-                    <a href="donate.php" class="icon-btn">
+                    <!-- <a href="donate.php" class="icon-btn">
                         <span class="icon"><i class="fa-solid fa-arrow-up-short-wide"></i></span>
                         <span class="tooltip">Quyên góp sản phẩm</span>
-                    </a>
+                    </a> -->
                     <a href="receive.php" class="icon-btn">
                         <span class="icon"><i class="fa-solid fa-arrow-down-wide-short"></i></span>
                         <span class="tooltip">Nhận sản phẩm</span>
@@ -43,17 +43,18 @@
                 <li><a href="index.php" class="active">Trang chủ</a></li>
                 <li><a href="index.php?type=VeChungToi">Về chúng tôi</a></li>
                 <li class="dropdown">
-                    <a href="products.php">Sản phẩm từ thiện <i class="fa-solid fa-angle-down"></i></a>
+                    <a href="">Sản phẩm từ thiện <i class="fa-solid fa-angle-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="index.php?type=QuanAo">Quần áo</a></li>
                         <li><a href="index.php?id=2">Sách vở</a></li>
                         <li><a href="index.php?id=3">Nhu yếu phẩm</a></li>
                     </ul>
                 </li>
-                <li><a href="news.php">Tin tức</a></li>
-                <li><a href="contact.php">Liên hệ</a></li>
+                <li><a href="index.php?type=NoiQuy">Nội quy</a></li>
+                <li><a href="index.php?type=LienHe">Liên hệ</a></li>
             </ul>
         </nav>
     </header>
+    <script src="../JS/scripts.js"></script>
 </body>
 </html>
