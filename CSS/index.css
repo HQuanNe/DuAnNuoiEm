@@ -64,7 +64,78 @@ ul {
 .auth-links a:hover {
     color: #28a745;
 }
+/* --- Cấu trúc phần bên phải của Top Bar --- */
+.right-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
+.quick-icons {
+    display: flex;
+    gap: 15px;
+    border-right: 2px solid #ddd; /* Đường kẻ mờ ngăn cách với phần đăng nhập */
+    padding-right: 20px;
+}
+
+/* Nút chứa Icon */
+.icon-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #e9ecef;
+    border-radius: 50%;
+    color: #28a745;
+    text-decoration: none;
+    transition: background 0.3s;
+    font-size: 12px; /* Thu nhỏ text placeholder lại để gọn khung */
+    text-align: center;
+}
+
+.icon-btn:hover {
+    background-color: #d4edda;
+}
+
+/* Khung chữ Tooltip hiện ra khi Hover */
+.icon-btn .tooltip {
+    position: absolute;
+    top: 130%; /* Đẩy tooltip xuống dưới icon một chút */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Tạo hình mũi tên nhỏ chỉ lên icon cho đẹp */
+.icon-btn .tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
+}
+
+/* Hiệu ứng nổi lên khi di chuột */
+.icon-btn:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: 115%; /* Nâng mượt lên sát icon */
+}
 /* Navigation */
 .main-nav {
     background-color: #28a745;
@@ -86,7 +157,7 @@ ul {
     font-weight: bold;
 }
 
-.main-nav > ul > li > a:hover, .main-nav > ul > li > a.active {
+.main-nav > ul > li > a:hover {
     background-color: #218838;
 }
 
@@ -240,4 +311,239 @@ footer {
     text-align: center;
     padding: 15px 0;
     font-size: 0.9rem;
+}
+
+/* ===============================
+   GIAO DIỆN ĐĂNG NHẬP / ĐĂNG KÝ
+================================== */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background-color: #e9ecef; /* Màu nền xám nhạt cho nổi form lên */
+    min-height: 70vh; /* Đảm bảo form luôn ở giữa kể cả khi ít nội dung */
+}
+
+.auth-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 450px; /* Độ rộng tối đa của form */
+}
+
+.auth-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #28a745; /* Trùng màu chủ đạo của web */
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #28a745; /* Đổi màu viền khi click vào ô nhập */
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.2);
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.auth-switch a {
+    color: #28a745;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+/* ===============================
+   GIAO DIỆN TRANG VỀ CHÚNG TÔI
+================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Banner About */
+.about-hero {
+    background-color: #218838; /* Xanh đậm hơn chút cho khác trang chủ */
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Câu chuyện của chúng tôi */
+.about-story {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.story-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.story-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.story-text h2 {
+    color: #28a745;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.story-text p {
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.story-img {
+    flex: 1;
+    min-width: 300px;
+}
+
+.story-img .img-placeholder {
+    background-color: #e9ecef;
+    height: 350px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Tầm nhìn và Sứ mệnh */
+.mission-vision {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.mv-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mv-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    border-top: 4px solid #28a745;
+}
+
+.mv-icon {
+    font-size: 1.5rem;
+    color: #28a745;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.mv-card h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.mv-card p {
+    color: #666;
+}
+
+/* Giá trị cốt lõi */
+.core-values {
+    padding: 60px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.value-item {
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.1);
+    border-color: #28a745;
+}
+
+.value-item h4 {
+    color: #28a745;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.value-item p {
+    color: #555;
+    font-size: 0.95rem;
 }
