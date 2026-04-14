@@ -17,7 +17,8 @@ echo '<div id="main-content">';
         } else {
             echo "<h3>Trang không tồn tại!</h3>";
         }
-    } else {
+    } 
+    else {
         // Nếu không có tham số gì, hiển thị nội dung mặc định của trang chủ
         include 'Homepage.php'; 
     }

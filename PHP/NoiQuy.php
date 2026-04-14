@@ -33,7 +33,7 @@
             <div class="rule-block">
                 <h3 class="rule-title"><i class="fa-solid fa-mobile-screen-button"></i>Đối với những người đăng ký nhận online:</h3>
                 <ul class="rule-list">
-                    <li><i class="fa-solid fa-check text-green"></i> <strong>Vào đường link:</strong> ….. hoặc <strong>quét mã QR:</strong> [Hình ảnh QR]</li>
+                    <li><i class="fa-solid fa-check text-green"></i> <strong>Vào đường link:</strong> ….. hoặc <strong>quét mã QR:</strong> <i class="fa-solid fa-qrcode fa-xl text-green"></i></li>
                     <li><i class="fa-solid fa-check text-green"></i> <strong>Chọn mục:</strong> “Tủ áo yêu thương”</li>
                     <li>
                         <i class="fa-solid fa-check text-green"></i> <strong>Đăng ký nhận:</strong> điền đầy đủ họ tên, số điện thoại, trang phục 

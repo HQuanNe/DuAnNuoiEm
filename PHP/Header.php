@@ -1,3 +1,13 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+// Khởi tạo giỏ hàng nếu chưa có
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
+}
+$cartCount = count($_SESSION['cart']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,20 +30,40 @@
             </div>
 
             <div class="right-actions">
-                <div class="quick-icons">
-                    <!-- <a href="donate.php" class="icon-btn">
-                        <span class="icon"><i class="fa-solid fa-arrow-up-short-wide"></i></span>
-                        <span class="tooltip">Quyên góp sản phẩm</span>
-                    </a> -->
-                    <a href="receive.php" class="icon-btn">
-                        <span class="icon"><i class="fa-solid fa-arrow-down-wide-short"></i></span>
-                        <span class="tooltip">Nhận sản phẩm</span>
-                    </a>
-                </div>
-
-                <div class="auth-links">
-                    <a href="index.php?type=Login"><i class="fa-solid fa-arrow-right-to-bracket"></i> Đăng nhập</a> | 
-                    <a href="index.php?type=Register"><i class="fa-solid fa-person-circle-plus"></i> Đăng ký</a>
+                <div class="auth-links" style="display: flex; align-items: center; gap: 20px;">
+                    <?php if(isset($_SESSION['username'])): ?>
+                        <a href="index.php?type=DanhSachNhan" style="font-size: 14.5px; margin-right: 15px; position: relative; color: #28a745;">
+                            <i class="fa-solid fa-cart-arrow-down"></i> Nhận sản phẩm 
+                            <span style="background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px; font-weight: bold; position: absolute; top: -10px; right: -25px;"><?= $cartCount ?></span>
+                        </a>
+                        <div style="font-weight: 500; color: #28a745; margin-left: 15px;">
+                            <i class="fa-solid fa-circle-user fa-lg"></i> Xin chào, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>
+                        </div>
+                        <?php if(isset($_SESSION['permission']) && $_SESSION['permission'] === 'admin'): ?>
+                            <div class="admin-dropdown" style="position: relative; display: inline-block;">
+                                <a href="#" style="font-size: 14.5px; margin-right: 15px; cursor: default;"><i class="fa-solid fa-user-tie"></i> Quản trị <i class="fa-solid fa-angle-down" style="font-size: 12px;"></i></a>
+                                <div class="admin-dropdown-content" style="display: none; position: absolute; top: 100%; right: 0; background: #fff; min-width: 170px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px; z-index: 1000; padding: 10px 0; border: 1px solid #f1f5f9;">
+                                    <a href="index.php?type=AdminDuyetDon" style="display: block; padding: 8px 15px; color: #333; font-size: 14px; text-decoration: none; margin: 0;"><i class="fa-solid fa-list-check" style="width: 20px; color: #28a745;"></i> Duyệt Đơn</a>
+                                    <a href="index.php?type=admin_add_product" style="display: block; padding: 8px 15px; color: #333; font-size: 14px; text-decoration: none; margin: 0;"><i class="fa-solid fa-plus-circle" style="width: 20px; color: #28a745;"></i> Thêm sản phẩm</a>
+                                </div>
+                            </div>
+                            <style>
+                                .admin-dropdown:hover .admin-dropdown-content {
+                                    display: block !important;
+                                }
+                                .admin-dropdown-content a:hover {
+                                    background-color: #f8fafc;
+                                    color: #28a745 !important;
+                                }
+                            </style>
+                        <?php endif; ?>
+                        <a href="logout.php" style="color: #ef4444; font-size: 14.5px;"><i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất</a>
+                    <?php else: ?>
+                        <span>
+                            <a href="index.php?type=Login"><i class="fa-solid fa-arrow-right-to-bracket"></i> Đăng nhập</a> <span style="margin: 0 8px; color: #cbd5e1;">|</span>
+                            <a href="index.php?type=Register"><i class="fa-solid fa-user-plus"></i> Đăng ký</a>
+                        </span>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

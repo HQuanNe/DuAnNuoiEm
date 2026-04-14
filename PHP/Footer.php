@@ -24,9 +24,9 @@
             </div>
             <div class="footer-col">
                 <h3>Thông tin liên hệ</h3>
-                <p>[Icon Địa chỉ] Hà Nội, Việt Nam</p>
-                <p>[Icon Điện thoại] 0123 456 789</p>
-                <p>[Icon Email] contact@tamnguyen.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Hà Nội, Việt Nam</p>
+                <p><i class="fa-solid fa-phone"></i> 0123 456 789</p>
+                <p><i class="fa-solid fa-envelope"></i> contact@tamnguyen.com</p>
             </div>
         </div>
         <div class="footer-bottom">
